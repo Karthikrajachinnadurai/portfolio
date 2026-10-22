@@ -122,14 +122,17 @@ export default function Hero() {
             View My Work
           </button>
 
-          <button
-            onClick={handleDownloadResume}
+          <a
+            href={contact.resumeUrl || "/resume.pdf"}
+            download="Karthik_Raja_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             id="hero-download-resume"
-            className="px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base bg-white dark:bg-[#12121C] text-slate-800 dark:text-[#F5F5F7] border border-slate-200 dark:border-[#1E1E2E] hover:border-cyan-500/50 dark:hover:border-[#00F0FF]/50 hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2"
+            className="px-6 py-3.5 rounded-xl font-semibold text-sm sm:text-base bg-white dark:bg-[#12121C] text-slate-800 dark:text-[#F5F5F7] border border-slate-200 dark:border-[#1E1E2E] hover:border-cyan-500/50 dark:hover:border-[#00F0FF]/50 hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2 cursor-pointer"
           >
             <Download size={18} className="text-cyan-600 dark:text-[#00F0FF]" />
             <span>Download Resume</span>
-          </button>
+          </a>
 
           <button
             onClick={() => scrollTo("contact")}

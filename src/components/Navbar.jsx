@@ -102,14 +102,17 @@ export default function Navbar() {
             </button>
 
             {/* Resume Button with Cyan-to-Violet gradient */}
-            <button
-              onClick={downloadResume}
+            <a
+              href={contact.resumeUrl || "/resume.pdf"}
+              download="Karthik_Raja_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               id="nav-resume-btn"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-[#00F0FF] dark:to-[#A78BFA] text-white dark:text-[#07070D] shadow-sm dark:shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(0,240,255,0.5)] hover:scale-105 active:scale-95 transition-all duration-200"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-bold rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-[#00F0FF] dark:to-[#A78BFA] text-white dark:text-[#07070D] shadow-sm dark:shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-md dark:hover:shadow-[0_0_25px_rgba(0,240,255,0.5)] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
             >
               <Download size={15} />
               <span>Resume</span>
-            </button>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
@@ -140,13 +143,16 @@ export default function Navbar() {
             </button>
           ))}
           <div className="pt-2">
-            <button
-              onClick={downloadResume}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-[#00F0FF] dark:to-[#A78BFA] text-white dark:text-[#07070D] shadow-sm dark:shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+            <a
+              href={contact.resumeUrl || "/resume.pdf"}
+              download="Karthik_Raja_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-[#00F0FF] dark:to-[#A78BFA] text-white dark:text-[#07070D] shadow-sm dark:shadow-[0_0_20px_rgba(0,240,255,0.3)] cursor-pointer"
             >
               <Download size={16} />
               Download Resume
-            </button>
+            </a>
           </div>
         </div>
       )}

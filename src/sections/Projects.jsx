@@ -482,8 +482,15 @@ export default function Projects() {
         page++;
       }
 
-      // Exclude forks and private repos
-      const validRepos = allGitHubRepos.filter((r) => !r.fork && !r.private);
+      // Exclude forks, private repos, portfolio repos, and profile README repos
+      const validRepos = allGitHubRepos.filter((r) => {
+        if (r.fork || r.private) return false;
+        const name = (r.name || "").toLowerCase().trim();
+        if (name === "portfolio" || name.includes("portfolio") || name === GITHUB_USERNAME.toLowerCase()) {
+          return false;
+        }
+        return true;
+      });
 
       // Explicitly sort validRepos strictly by most recent pushed_at timestamp descending
       validRepos.sort(
@@ -524,6 +531,12 @@ export default function Projects() {
       for (const repo of validRepos) {
         // Skip if this was the RAG repo already placed first
         if (githubRagRepo && repo.id === githubRagRepo.id) continue;
+
+        const repoNameLower = (repo.name || "").toLowerCase().trim();
+        // Skip portfolio website repo or profile repo
+        if (repoNameLower === "portfolio" || repoNameLower.includes("portfolio") || repoNameLower === GITHUB_USERNAME.toLowerCase()) {
+          continue;
+        }
 
         const isAtm = (repo.name || "").toLowerCase().includes("atm");
         const rawDesc = (repo.description || "").trim();
