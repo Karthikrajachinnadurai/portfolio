@@ -1,0 +1,113 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Outfit", "system-ui", "sans-serif"],
+      },
+      colors: {
+        aurora: {
+          bg: "#07070D",
+          darker: "#05050A",
+          surface: "#12121C",
+          elevated: "#161626",
+          border: "#1E1E2E",
+          "border-light": "#2A2A3D",
+          cyan: "#00F0FF",
+          violet: "#A78BFA",
+          gold: "#F5C542",
+          text: "#F5F5F7",
+          muted: "#A1A1AA",
+          success: "#22C55E",
+        },
+        primary: {
+          50: "#ecfeff",
+          100: "#cffafe",
+          200: "#a5f3fc",
+          300: "#67e8f9",
+          400: "#22d3ee",
+          500: "#00F0FF",
+          600: "#00d2e0",
+          700: "#0891b2",
+          800: "#0e7490",
+          900: "#155e75",
+          950: "#083344",
+        },
+        secondary: {
+          50: "#f5f3ff",
+          100: "#ede9fe",
+          200: "#ddd6fe",
+          300: "#c4b5fd",
+          400: "#A78BFA",
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#4c1d95",
+          950: "#2e1065",
+        },
+        accent: {
+          50: "#fffbeb",
+          100: "#fef3c7",
+          200: "#fde68a",
+          300: "#fcd34d",
+          400: "#fbbf24",
+          500: "#F5C542",
+          600: "#d97706",
+          700: "#b45309",
+          800: "#92400e",
+          900: "#78350f",
+          950: "#451a03",
+        },
+        surface: {
+          dark: "#07070D",
+          "dark-2": "#0A0A12",
+          "dark-3": "#12121C",
+          card: "#12121C",
+          border: "#1E1E2E",
+        },
+      },
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        "pulse-slow": "pulseSlow 4s ease-in-out infinite",
+        glow: "glow 4s ease-in-out infinite",
+        "fade-in-up": "fadeInUp 0.6s ease forwards",
+        "spin-slow": "spin 12s linear infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-14px)" },
+        },
+        pulseSlow: {
+          "0%, 100%": { transform: "scale(1)", opacity: "1" },
+          "50%": { transform: "scale(1.02)", opacity: "0.95" },
+        },
+        glow: {
+          "0%, 100%": {
+            boxShadow: "0 0 25px rgba(0, 240, 255, 0.4), 0 0 50px rgba(167, 139, 250, 0.25)",
+          },
+          "50%": {
+            boxShadow: "0 0 40px rgba(167, 139, 250, 0.5), 0 0 70px rgba(0, 240, 255, 0.3)",
+          },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      boxShadow: {
+        glow: "0 0 25px rgba(0, 240, 255, 0.35)",
+        "glow-cyan": "0 0 25px rgba(0, 240, 255, 0.4)",
+        "glow-violet": "0 0 25px rgba(167, 139, 250, 0.4)",
+        "glow-lg": "0 0 50px rgba(0, 240, 255, 0.35)",
+        card: "0 8px 32px 0 rgba(0, 0, 0, 0.45)",
+        "card-dark": "0 8px 32px 0 rgba(0, 0, 0, 0.6)",
+      },
+    },
+  },
+  plugins: [],
+};

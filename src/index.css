@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-gradient: linear-gradient(135deg, #00F0FF 0%, #A78BFA 60%, #F5C542 100%);
+    --scrollbar-thumb: #cbd5e1;
+    --scrollbar-track: #f8fafc;
+  }
+
+  .dark {
+    --scrollbar-track: #07070D;
+    --scrollbar-thumb: #1E1E2E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased text-slate-900 bg-slate-50 dark:bg-[#07070D] dark:text-[#F5F5F7] transition-colors duration-300;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00F0FF 0%, #A78BFA 100%);
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    @apply bg-gradient-to-r from-cyan-600 via-violet-600 to-cyan-600 dark:from-[#00F0FF] dark:via-[#A78BFA] dark:to-[#00F0FF] bg-clip-text text-transparent;
+  }
+
+  .gradient-brand-btn {
+    @apply bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-[#00F0FF] dark:to-[#A78BFA] text-white dark:text-[#07070D] font-bold shadow-md dark:shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-lg dark:hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all duration-300;
+  }
+
+  .card-surface {
+    @apply bg-white/90 dark:bg-[#12121C]/85 backdrop-blur-md border border-slate-200/80 dark:border-[#1E1E2E] shadow-sm dark:shadow-[0_8px_32px_rgba(0,0,0,0.5)] hover:border-cyan-500/40 dark:hover:border-[#00F0FF]/30 transition-all duration-300 rounded-2xl;
+  }
+
+  .card-glass {
+    @apply bg-white/80 dark:bg-[#12121C]/80 backdrop-blur-lg border border-slate-200/80 dark:border-[#1E1E2E] hover:border-cyan-500/40 dark:hover:border-[#00F0FF]/40 shadow-sm dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-all duration-300;
+  }
+}
+
+/* Animations */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  50% { transform: translateY(-16px) rotate(-4deg) scale(1.03); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), 0 0 50px rgba(167, 139, 250, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(167, 139, 250, 0.5), 0 0 80px rgba(0, 240, 255, 0.35);
+  }
+}
+
+.avatar-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.anim-float-1 {
+  animation: float1 6s ease-in-out infinite;
+}
+
+.anim-float-2 {
+  animation: float2 8s ease-in-out infinite;
+}
+
+/* Subtle Quantum Aurora dot grid */
+.bg-grid-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgba(14, 165, 233, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+.dark .bg-grid-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 240, 255, 0.07) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+#particles-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
