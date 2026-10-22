@@ -18,10 +18,10 @@ export default function Experience() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-cyan-100/70 dark:bg-[#00F0FF]/10 text-cyan-700 dark:text-[#00F0FF] border border-cyan-300/40 dark:border-[#00F0FF]/25 uppercase tracking-widest mb-3">
             <Sparkles size={13} />
-            <span>Journey</span>
+            <span>Leadership</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-black font-display text-slate-900 dark:text-[#F5F5F7] mb-4">
-            Leadership & <span className="text-cyan-600 dark:text-[#00F0FF]">Experience</span>
+            <span className="text-cyan-600 dark:text-[#00F0FF]">Leadership</span>
           </h2>
           <p className="text-lg sm:text-xl text-slate-600 dark:text-[#A1A1AA] max-w-3xl mx-auto">
             Hands-on campus leadership and student governance at Nehru Institute of Technology.
